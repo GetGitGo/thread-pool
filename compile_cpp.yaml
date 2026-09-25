@@ -6,7 +6,7 @@ deps: [include/BS_thread_pool.hpp]
 disable_exceptions: false
 # A map of flags to pass to each compiler. The compiler should be one of [cl, clang++, g++]. The flags should be a list of strings.
 flags:
-  cl: [/W4, /D_CRT_SECURE_NO_WARNINGS]
+  cl: [/utf-8, /W4, /D_CRT_SECURE_NO_WARNINGS]
   clang++: [-Wall, -Wextra, -Wconversion, -Wsign-conversion, -Wpedantic, -Wshadow, -Weffc++, -Wdocumentation, -march=native, -fcolor-diagnostics, -fansi-escape-codes, -stdlib=libc++]
   g++: [-Wall, -Wextra, -Wconversion, -Wsign-conversion, -Wpedantic, -Wshadow, -Wuseless-cast, -march=native, -fdiagnostics-color=always, -Wnrvo]
 # A list of include folders.

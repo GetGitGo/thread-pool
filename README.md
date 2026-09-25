@@ -20,6 +20,8 @@ GitHub: <https://github.com/bshoshany>
 
 This is the complete documentation for **v5.1.0** of the library, released on **2026-01-03**.
 
+中文译本：[README.zh.md](README.zh.md)
+
 * [Introduction](#introduction)
     * [Motivation](#motivation)
     * [Overview of features](#overview-of-features)

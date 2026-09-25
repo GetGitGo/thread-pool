@@ -1,0 +1,26 @@
+# nmake. 在 “Developer PowerShell for VS 2022” 中，于仓库根目录执行:
+#   nmake
+#   nmake STD=c++20
+#   nmake clean
+# MINGW64 用 GNU make，见 GNUmakefile: make
+
+STD = c++17
+OUTDIR = build
+TARGET = $(OUTDIR)\N_BS_thread_pool_test.exe
+SRC = tests\BS_thread_pool_test.cpp
+OBJ = $(OUTDIR)\BS_thread_pool_test.obj
+
+CXXFLAGS = /nologo /std:$(STD) /EHsc /utf-8 /permissive- /Zc:__cplusplus /W4 \
+	/D_CRT_SECURE_NO_WARNINGS /DBS_THREAD_POOL_NATIVE_EXTENSIONS /I include
+
+all: $(TARGET)
+
+$(TARGET): $(SRC)
+	if not exist $(OUTDIR) mkdir $(OUTDIR)
+	cl $(CXXFLAGS) /Fe:$(TARGET) /Fo:$(OBJ) $(SRC)
+
+clean:
+	if exist $(TARGET) del /q $(TARGET)
+	if exist $(OBJ) del /q $(OBJ)
+	if exist $(OUTDIR)\BS_thread_pool_test.pdb del /q $(OUTDIR)\BS_thread_pool_test.pdb
+	if exist $(OUTDIR)\vc140.pdb del /q $(OUTDIR)\vc140.pdb
